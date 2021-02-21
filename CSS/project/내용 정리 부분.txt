@@ -1,0 +1,79 @@
+CSS
+.skipnavi부분
+시각장애인은 웹 페이지를 읽어주는 서비스를 사용(리더기)하는데, 웹 접근성을 위해 메뉴를 숩겼다가 나타났다가 하는 기능을 사용한다.
+평소엔 나타나지 않다가 탭 키를 누르면 "본문 내용"이 나타난다.
+
+기사 읽어보기
+https://nuli.navercorp.com/community/article/1132804
+
+
+<div class="header_area box_inner clear">
+이름이 하나가 아닌 header_area 따로 box_inner 따로, clear 따로라 세 개의 클래스 이름을 가진다.
+
+header_area : 헤더를 꾸미는 용도
+
+box_inner : 사이즈를 설정할 부분
+
+clear : float을 사용하고 clear를 편하게 사용하기 위해 clear라는 클래스도 만들어준다.
+
+overflow: hidden; : 창을 줄이면서 글자가 밑으로 내려가는 경우에 틀이 망가지므로 넘쳐서 내려가는 글자들은 가리기 위한 설정.
+
+openAll1 : 메뉴마다 클래스 이름을 다르게 준다. 해당 메뉴를 누르면 하위 메뉴가 나오게 할 건데 하위 메뉴들의 위치가 모두 다르므로 클래스 이름을 다르게 준다.
+
+white-space: normal;
+wrap의 반대
+
+
+word-wrap: break-word;
+breakword하면 단어 단위로 내리지 않고 글자 단위로 내린다.
+ex) 안녕|
+하세요. |
+
+background: rgba(0, 0, 0, 0.3) url(../images/ico_katalk.png) no-repeat 20px 50%;
+20px, 50%는 각각 x축, y축을 나타낸다.
+
+<li><a href="tel:02-1111-1111"></a></li> 
+링크를 전화번호로 하면 핸드폰에서 링크를 누를 경우 전화로 연결된다.
+
+location_area
+화면의 비주얼적인 공통 부분
+
+member 
+배경사진을 화면에 따라 변경
+
+.location_area { height: 260px; background: url(../images/img_top2.jpg) no-repeat center bottom; }
+center bottom 가운데 아래를 비춘다
+
+<p class="info_piosoo piosoo_item">필수입력</p>
+필수 입력 부분을 처리하기 위한 클래스
+
+dl태그
+dt: 제목
+dd : 내용
+
+label의 for과 id는 무조건 같아야 한다.
+
+repeat-y : 세로축으로만 반복하게
+
+padding: 10px 10px 17px 0;
+위 오른쪽 아래 왼쪽(시계방향)
+
+<thead>
+
+</thead>
+<tbody>
+
+</tbody>
+<tfoot>
+    
+</tfoot>
+테이블에서 딱히 기능은 따로 없는 태그
+
+<div class="location_area customer">
+customer과 member마다 사진이 다르다
+
+.program_list li:nth-child(3n+1) { clear: both; }
+세 개 끝나고 네번째에서 clear처리
+
+.header_cont .gnb li { float: left; width: 50%; text-align: left; box-sizing: border-box; border-bottom: 1px solid #83868b; }
+두개만 딸려온다(50%라)
