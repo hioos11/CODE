@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+</head>
+<body>
+    <h2>이미지</h2>
+    <!-- 절대 경로 -->
+    <img src = "https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="다음로고">
+
+    <!-- live server로는 안보인다. 폴더에서 .html 파일 직접 클릭하면 확인 가능 -->
+    <!-- 웹사이트 만들때 이 방법은 사용하지 않는다. 파일이 내 컴퓨터에 있기 때문.-->
+    <img src = "C:\CODE\HTML\Day2\img1.png" alt="img1"><!--가상 서버에서는 이미지가 깨진다.-->
+
+    <!-- 상대 경로 -->
+    <!-- html을 기준으로 파일의 위치 탐색해 경로 지정 -->
+    <img src = "./img2.png" alt = "img2">
+    <img src ="./img/img3.png" alt = "img3">
+    <img src ="../img4.png" alt = "img4">   <!-- 얘도 깨진다. liveserver에서는 html보다 위로 올라갈 수 없으므로-->
+    <img src = "../Day1/img5.png" alt = "img5">
+
+</body>
+</html>

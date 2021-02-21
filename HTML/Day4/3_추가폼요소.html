@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추가 폼 요소</title>
+</head>
+<body>
+    <h2>추가 폼 요소</h2>
+    <form method="post" action="regist.jsp">
+        <p>이메일 : <input type="email" name="email"></p>
+        <p>웹사이트 : <input type="url" name="url"></p>
+        <p>휴대폰번호 : <input type="tel" name="tel"></p>
+        <p>생년월일 : <input type="date" name="birthday"></p>
+        <p>나이(만) : <input type="number" min="1" max="150" step="1" name="age"></p>
+        <p>프로그래밍 능력(상, 중, 하) : <input type="range" min="1" max="3" value="2"></p>
+        <p>원하는 색상 : <input type="color" name="color"></p>
+        <p>쿠폰 : <input type="search" name="coupon"></p>
+
+        <p>관심분야 : <input type="text" list="interest" name="interest">
+            <datalist id="interest">
+                <option value="자동차" label="테크놀리지"></option>
+                <option value="가전제품" label="테크놀리지"></option>
+                <option value="소프트웨어" label="테크놀리지"></option>
+                <option value="컴퓨터" label="테크놀리지"></option>
+                <option value="영화" label="엔터테인먼트"></option>
+                <option value="게임" label="엔터테인먼트"></option>
+                <option value="공연" label="엔터테인먼트"></option>
+                <option value="음악" label="엔터테인먼트"></option>
+
+            </datalist></p>
+
+
+    </form>
+</body>
+</html>
