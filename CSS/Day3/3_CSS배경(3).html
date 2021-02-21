@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 배경 - 3</title>
+    <style>
+        div { 
+            width: 60%; 
+            height: auto;  /* 안의 내용이 다 채워지도록 적당히 알아서 정해진다. */
+            border: 3px dotted red;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #bg1 {
+            background-image: url('./winter.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+
+        }
+
+        #bg2 {
+            background-image: url('./winter.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS 배경 - 3</h2>
+    <div id="bg1">
+        <h2>background-position 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat temporibus placeat, aperiam quos ducimus autem excepturi ea impedit itaque voluptates cupiditate illum sequi sapiente tenetur corporis sint at vitae nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum dolores laudantium atque deleniti iusto consectetur nobis, aut laborum, obcaecati deserunt dolorem possimus reprehenderit est voluptatem fuga nam architecto quia?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ratione dolorum suscipit aspernatur saepe doloribus expedita amet alias praesentium! Voluptate qui quisquam consequuntur consequatur officia minus in repudiandae animi adipisci! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, expedita molestias earum itaque, soluta ullam eius commodi esse perferendis autem recusandae veniam facilis minima dolorum laboriosam cumque pariatur? Vel, nisi.
+        </p>
+    </div>
+    <div id="bg2">
+        <h2>background-position 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat temporibus placeat, aperiam quos ducimus autem excepturi ea impedit itaque voluptates cupiditate illum sequi sapiente tenetur corporis sint at vitae nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum dolores laudantium atque deleniti iusto consectetur nobis, aut laborum, obcaecati deserunt dolorem possimus reprehenderit est voluptatem fuga nam architecto quia?Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis et pariatur, inventore similique corporis dignissimos, earum est ex libero ratione quos quia laudantium eveniet! Modi omnis suscipit qui deleniti ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate natus pariatur itaque consequatur quaerat consequuntur nisi quo at reiciendis, iste deleniti cum inventore soluta sapiente doloremque deserunt nesciunt nemo molestiae?</p>
+    </div>
+</body>
+</html>

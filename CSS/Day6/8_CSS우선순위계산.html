@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 우선순위 계산</title>
+    <style>
+        #id-style-with-important { background-color: yellow !important; }
+        #id-style-2 {
+            background-color: skyblue;
+            margin: 50px;
+            padding: 50px;
+        }
+        #id-style {background-color: blue;}
+        .class-style { background-color: red;}
+        div {
+            display: block;
+            padding: 30px;
+            margin: 30px;
+            background-color: white;
+        }
+        div {
+            background-color: purple;
+        }
+        /* 1 + 1 + 10 = 12점*/
+        ul > li.li-class {
+            background-color: salmon;
+            color: deeppink;
+        }
+        /* 1점 */
+        ul { color: black; }
+        /* 1 + 1 = 2점*/
+        ul > li { color: aqua; }
+    </style>
+</head>
+<body>
+    <h2>CSS 우선순위 계산</h2>
+
+    <!-- !important 적용 우선 (0순위) -->
+    <!-- id="id-style-with-important"에 !important속성이 적용되어 있어 0순위인 !important에 따라 yellow가 적용된다. -->
+    <div id="id-style-with-important" style="background-color: green;" id="id-style" class="class-style">div 1번</div>
+
+    <!-- 인라인 스타일 적용 우선 (1000점) -->
+    <!-- 인라인 스타일, id, class가 있지만 가장 우선순위가 높은 인라인 스타일이 적용된다. -->
+    <div style="background-color: green;" id="id-style" class="class-style">div 2번</div>
+
+    <!-- id 스타일 점수 적용 우선 (100점) -->
+    <!-- div와 id가 있는데, 태그인 div보다 id가 우선순위가 높아 id가 적용된다. -->
+    <div id="id-style">div 3번</div>
+
+    <!-- class 스타일 점수 적용 우선 (10점) -->
+    <!-- div, class가 있는데, 1점인 태그 속성보다 10점인 class가 높으므로 class적용 -->
+    <div class="class-style">div 4번</div>
+
+    <!-- 마지막 적용된 스타일 우선 -->
+    <!-- 2개의 태그 속성이 존재하는데 마지막에 적용된 스타일이 적용된다. -->
+    <div>div 5번</div>
+
+    <!-- id나 class 속성은 CSS에 먼저 나온 스타일이 우선시된다. -->
+    <div id="id-style-2" id="id-style">div 6번</div>
+
+    <!-- 점수가 가장 높은 12점짜리가 적용된다. -->
+    <ul>
+        <li class="li-class">li 1번</li>
+    </ul>    
+</body>
+</html>

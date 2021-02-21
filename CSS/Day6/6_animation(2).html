@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation - 2</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: deeppink;
+            animation-name: sample;
+            animation-duration: 4s;
+            animation-fill-mode: forwards; /* 마지막 속성 유지 */
+        }
+
+        @keyframes sample {
+            0% {
+                background-color: deeppink;
+                transform: translate(0,0);
+            }
+            50% {
+                background-color: deepskyblue;
+                transform: translate(500px,500px);
+            }
+            100% {
+                background-color: gold;
+                transform: translate(0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>animation - 2</h2>
+    <p>CSS3 animation</p>
+</body>
+</html>

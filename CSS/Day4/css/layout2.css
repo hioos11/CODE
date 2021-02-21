@@ -1,0 +1,56 @@
+#container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+div {
+    padding: 20px;
+    border: 1px solid gray;
+}
+
+#header {
+    margin-bottom: 20px;
+}
+
+#side1 {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+}
+
+#contents {
+    float: left;
+    margin-right: 20px;
+    width: 530px;
+    margin-bottom: 20px;
+    list-style-type: none;
+}
+#contents ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+#contents li {
+    padding-bottom: 20px;
+
+}
+
+#side2 {
+    width: 150px;
+    float: left;
+}
+
+#footer {
+    clear: both;
+
+}
+#footer ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+#footer li {
+    list-style-type: none;
+    padding-bottom: 20px;
+}

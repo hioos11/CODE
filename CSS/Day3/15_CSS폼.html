@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 폼</title>
+    <style>
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            margin: 5px 0;
+            background-color: gold;
+        }
+        input[type="text"] {
+            border:2px solid red;
+            border-radius: 15px;
+        }
+        input[type="text"]:focus {
+            border:2px dotted red;
+        }
+        input[type="password"] {
+            border: none;
+            border-bottom: 2px solid blue;
+        }
+        input[type="password"]:focus{
+            border-bottom: 2px dotted blue;
+        }
+        input[type="radio"]{
+            width: 10%;
+        }
+        input[type="search"] {
+            background-image: url('./search.png');
+            background-repeat: no-repeat;
+            background-position: 10px;
+            padding-left: 40px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            box-sizing: border-box;
+            padding: 10px;  /* 텍스트 쓰는 부분 공백*/
+            border: 2px solid deepskyblue;
+            font-size: 20px;
+            resize: none; /* 사이즈 조절 불가하게*/
+        }
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin:5px 0;
+            border: 2px solid red;
+            background-color: gold;
+        }
+        input[type="reset"], input[type="submit"] {
+            width: 160px;
+            background-color: seagreen;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            margin: 5px 0;
+            cursor: pointer;    /* 커서를 갖다대면 손가락 모양 */
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS 폼</h2>
+    <form>
+        <p>아이디 : <input type="text" maxlength="20" placeholder="아이디를 입력하세요." name="userid" required></p>
+
+        <p>비밀번호 : <input type="password" maxlength="20" placeholder="비밀번호를 입력하세요." name="userpw" required></p> 
+
+        <p>성별 : <label>남자<input type="radio" name="gender" value="남자" checked></label> <label>여자<input type="radio" name="gender" value="여자" checked></label> </p>
+
+        <p>검색 : <input type="search" name="search"></p>
+        <p>내용</p>
+        <p><textarea name="content"></textarea></p>
+        <p>직업 <select name="job">
+            <option value="#">선택하세요</option>
+            <option value="학생">학생</option>
+            <option value="컴퓨터/인터넷">컴퓨터/인터넷</option>
+            <option value="언론">언론</option>
+            <option value="공무원">선택하세요</option>
+            <option value="서비스">선택하세요</option>
+        </select></p>
+        <p><input type="submit" value="가입"> <input type="reset" value="다시작성"></p>
+    </form>
+</body>
+</html>

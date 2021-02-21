@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation - 3</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 60px;
+            background-color: gold;
+            animation: ani_rotate 1.5s infinite, ani_background 1.5s infinite alternate;
+        }
+        @keyframes ani_rotate {
+            from {
+                transform: perspective(150px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(150px) rotateX(-180deg) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(150px) rotateX(-180deg) rotateY(-180deg);
+            }
+        }
+        @keyframes ani_background {
+            from {
+                background-color: gold;
+                
+            }
+            50% {
+                background-color: deepskyblue;
+            }
+            100% {
+                background-color: deeppink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>animation - 3</h2>
+    <div class="box"></div>
+</body>
+</html>
