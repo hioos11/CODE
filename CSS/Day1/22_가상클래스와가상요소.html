@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스와 가상요소</title>
+    <style>
+        .letter::first-letter {font-size: 40px;}
+        .letter::first-line {color:red;}
+        .list1 li:first-child {color: deepskyblue}
+        .list1 li:last-child {color: green;}
+
+        .txt1::before {content: "★"}
+        .txt2::after {content:"♥"}
+
+        .list2 li:nth-child(2) {color:deeppink}
+        .list2 li:nth-child(odd) {color:gold}
+    </style>
+</head>
+<body>
+    <h2>가상클래스와 가상요소</h2>
+    <p class="letter">안녕하세요. css의 가상 클래스를 공부하고 있습니다.</p>
+    <ul class="list1">
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+    </ul>
+
+    <p class="txt1">before</p>
+    <p class="txt2">after</p>
+    <ul class="list2">
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>fourth</li>
+    </ul>
+</body>
+</html>
