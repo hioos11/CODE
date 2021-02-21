@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 텍스트 - 9</title>
+    <style>
+        .font-div { font-size: 2em;}
+        .font-p1 { font-size: 1em;}   /* 부모의 2em을 상속받아 2em을 기준으로 1em이므로 전체적으로 봤을 때에는 자식도 2em이다 (32px)*/
+        .font-p2 { font-size: 1rem; } /* 단위가 달라졌기 때문에 상속받은 것이 적용이 안된다. */
+
+        html { font-size: 14px; }   /* 여기서 설정한 크기가 rem에 적용된다. rem은 html의 상속을 받는다. */
+    </style>
+</head>
+<body>
+
+    <h2>CSS 텍스트 - 9</h2>
+    
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit error culpa commodi harum voluptate, ipsa reiciendis facere necessitatibus nihil quaerat laudantium sequi at, rem exercitationem? Ratione, neque culpa. Illo, nostrum.</p>
+    </div>
+    <div class="font-div">
+        <p class="font-p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit error culpa commodi harum voluptate, ipsa reiciendis facere necessitatibus nihil quaerat laudantium sequi at, rem exercitationem? Ratione, neque culpa. Illo, nostrum.</p>
+    </div>
+    <div class="font-div">
+        <p class="font-p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit error culpa commodi harum voluptate, ipsa reiciendis facere necessitatibus nihil quaerat laudantium sequi at, rem exercitationem? Ratione, neque culpa. Illo, nostrum.</p>
+    </div>
+
+</body>
+</html>
