@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 - 1</title>
+</head>
+<body>
+    <h2>배열 - 1</h2>
+    <script>
+        'use strict';
+        const arr = ['김사과', 20, 160.5, true];
+
+        console.log(arr[0]);
+        console.log(arr[3]);
+        console.log(arr[5]);
+
+        for(let i=0;i<=3;i++){
+            console.log(arr[i]);
+        }
+
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+
+        // index 출력
+        for(let i=0;i<arr.length;i++){
+            console.log(i);
+        }
+        
+        // index 출력   
+        for(let i in arr){
+            console.log(i);
+        }
+
+        // 향상된 for문
+        // value 출력
+        for(let i of arr){
+            console.log(i)
+        }
+
+        // function : 익명함수
+        // arr에서 반복을 돌리는데 요소의 개수만큼 함수 function 실행
+        arr.forEach(function(i){
+            console.log(i)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 - 2</title>
+</head>
+<body>
+    <h2>배열 - 2</h2>
+    <!-- <script>
+        'use strict';
+
+        const input = Number(prompt('입력받을 점수의 갯수를 입력하세요.'));
+        let score;
+
+        for(let i = 0;i<input;i++){
+            score[i] = Number(prompt(`${i+1}번째 점수를 입력하세요.`));
+        }
+
+        for(let i=0;i<input;i++){
+            console.log(`${i+1}번째 점수 : ${score[i]}점`);
+        }
+
+    </script> -->
+
+
+    <script>
+        'use script';
+        const cnt = Number(prompt('입력받을 점수의 갯수를 입력하세요'));
+        let num = 0;
+        let jumsu = [];
+        let tot = 0, avg = 0;
+
+        while(num < cnt){
+            jumsu[num] = Number(prompt(`${num+1}번째 점수를 입력하세요`));
+            tot += jumsu[num];
+            num++;
+        }
+        avg = tot/cnt;
+        for(let i = 0;i<jumsu.length;i++){
+            document.write(`<p>${i+1}번째 점수는 ${jumsu[i]}점</p>`);
+        }
+        document.write(`<p>총점 : ${tot}점</p>`);
+        document.write(`<p>평균 : ${avg}점</p>`)
+    </script>
+</body>
+</html>

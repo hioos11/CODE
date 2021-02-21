@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 - 1</title>
+</head>
+<body>
+    <h2>함수 - 1</h2>
+    <script>
+        function func1(){
+            alert('func1 함수가 호출되었습니다.')
+            console.log('func1 함수가 호출되었습니다.');
+        }
+        const func2 = function(){
+            alert('func2 함수가 호출되었습니다.')
+            console.log('func2 함수가 호출되었습니다.')
+        }
+    </script>
+    <input type='button' value="func1 함수 호출" onclick="func1()">
+    <input type='button' value="func2 함수 호출" onclick="func2()">
+</body>
+</html>

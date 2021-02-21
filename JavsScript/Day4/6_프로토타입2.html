@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 - 2</title>
+</head>
+<body>
+    <h2>프로토타입 - 2</h2>
+    <script>
+        'use strict';
+        function Dog(color,name,age){
+            this.color = color;
+            this.name = name;
+            this.age = age;
+        }
+        // 생성자에 없는 것을 추가하기 위해서는 이러한 방식으로 추가한다.
+        Dog.prototype.family = "포메리안";
+        Dog.prototype.breed = function(){
+            return this.color + " " + this.family;
+        }
+        const rucy = new Dog("흰색","루시",10);
+        const ppomi = new Dog("흰색","뽀미",5);
+
+        console.log(`이름 : ${rucy.name}`);
+        console.log(`색상 : ${rucy.color}`);
+        console.log(`나이 : ${rucy.age}`);
+        console.log(`종 : ${rucy.family}`);
+        console.log(`품종 : ${rucy.breed()}`);
+
+        console.log(`이름 : ${ppomi.name}`);
+        console.log(`색상 : ${ppomi.color}`);
+        console.log(`나이 : ${ppomi.age}`);
+        console.log(`종 : ${ppomi.family}`);
+        console.log(`품종 : ${ppomi.breed()}`);
+    </script>
+</body>
+</html>

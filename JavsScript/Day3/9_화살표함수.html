@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    
+    <script>
+        'use strict';
+
+        const hello1 = () => console.log(`안녕하세요. JavaScript`);
+        const hello2 = (x, y) => console.log(`매개 변수로 전달받은 x의 값은 ${x}이며, y의 값은 ${y}입니다.`);
+        const hello3 = (start, end) => {
+            let sum = 0;
+            for(let i=start; i<=end; i++){
+                sum+=i;
+            }
+            return sum;
+        }
+    </script>
+    <h2>화살표 함수</h2>
+    <script>
+        hello1();
+        hello2(3, 3);
+        const result = hello3(1,100);
+        console.log(`1~100까지의 총합 : ${result}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout함수</title>
+</head>
+<body>
+    <h2>setTimeout함수</h2>
+    <script>
+        'use strict';
+        const hello = function(){
+            alert('안녕하세요. JavaScript!');
+        }
+
+        // 보통 함수를 파라미터로 넘길 수 없지만, 여기서는 함수를 변수처럼 사용할 수 있다.
+        const st = window.setTimeout(hello,2000);
+        //clearTimeout(st);
+    </script>
+    <p><input type="button" value="취소" onclick="clearTimeout(st)"></p>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사칙연산</title>
+    <style>
+        .game_box {
+            border:dodgerblue 3px solid;
+            width: 1000px; height: 500px;
+            margin: 150px auto;
+        }
+        h1 { text-align: center; }
+
+        /* #hover_msg { display: none; }
+        .game_box:hover #hover_msg {
+            display: block;
+            margin-top: 150px;
+            font-size: 50px;
+        }
+        .game_box:hover h1 { display: none; }
+        .game_box:hover .question_box { display: none; }
+        .game_box:hover .answer_box { display: none; } */
+
+        .question_box {
+            width: 384px;
+            height: 128px;
+            margin: 0 auto;
+        }
+        .question {
+            width: 128px;
+            height: 128px;
+            float:left;
+        }
+        /* #num2 {
+            clear:both;
+        } */
+        h2 { text-align: center; }
+        #answer {
+            margin-left: 300px;
+            padding: 0 auto;
+            width: 500px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="game_box">
+            <h1 id="start" onclick="game();">게임시작</h1>
+            <h1>사칙연산 게임</h1>            
+            <!-- <h1 id="hover_msg">게임을 시작하려면 클릭하세요</h1> -->
+            <div class="question_box">
+                <div class="question" id="num1"></div>
+                <div class="question" id="oper"></div>
+                <div class="question" id="num2"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        'use script';
+        let cnt = 0;
+        function game(){
+        // const game = function(){
+            const num1 = Math.floor(Math.random()*2)+1;
+            const num2 = Math.floor(Math.random()*2)+1;
+            const operator = Math.floor(Math.random()*4)+1;
+
+            let result = 0;
+
+            let num1_img = "";
+            let num2_img = "";
+            let oper_img = "";
+
+            switch(num1){
+                case 1:
+                    num1_img = "./images/1.png";
+                    break;
+                case 2:
+                    num1_img = "./images/2.png";
+                    break;
+                case 3:
+                    num1_img = "./images/3.png";
+                    break;
+                case 4:
+                    num1_img = "./images/4.png";
+                    break;
+                case 5:
+                    num1_img = "./images/5.png";
+                    break;
+                case 6:
+                    num1_img = "./images/6.png";
+                    break;
+                case 7:
+                    num1_img = "./images/7.png";
+                    break;
+                case 8:
+                    num1_img = "./images/8.png";
+                    break;
+                case 9:
+                    num1_img = "./images/9.png";
+                    break;
+                case 10:
+                    num1_img = "./images/10.png";
+                    break;
+                default:
+                    num1_img = "./images/sad.png";
+            }
+            switch(num2){
+                case 1:
+                    num2_img = "./images/1.png";
+                    break;
+                case 2:
+                    num2_img = "./images/2.png";
+                    break;
+                case 3:
+                    num2_img = "./images/3.png";
+                    break;
+                case 4:
+                    num2_img = "./images/4.png";
+                    break;
+                case 5:
+                    num2_img = "./images/5.png";
+                    break;
+                case 6:
+                    num2_img = "./images/6.png";
+                    break;
+                case 7:
+                    num2_img = "./images/7.png";
+                    break;
+                case 8:
+                    num2_img = "./images/8.png";
+                    break;
+                case 9:
+                    num2_img = "./images/9.png";
+                    break;
+                case 10:
+                    num2_img = "./images/10.png";
+                    break;
+                default:
+                    num2_img = "./images/sad.png";
+            }
+            switch(operator){
+                case 1:
+                    result = num1 + num2;
+                    oper_img = "./images/add.png";
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    oper_img = "./images/minus.png";
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    oper_img = "./images/multiply.png";
+                    break;
+                case 4:
+                    result = num1 / num2;
+                    oper_img = "./images/division.png";
+                    break;
+                default:
+                    oper_img = "./images/sad.png";
+
+            }
+
+            // html의 요소 중 id가 num1 인것을 찾아 div_num1에 저장.
+            const div_num1 = document.getElementById("num1");
+            const div_num2 = document.getElementById("num2");
+            const div_oper = document.getElementById("oper");
+
+
+
+            // 안에 입력한 것들이 <div class="question" id="num1"></div>에 들어간다
+            div_num1.innerHTML = `<img src="${num1_img}">`;
+            div_num2.innerHTML = `<img src="${num2_img}">`;
+            div_oper.innerHTML = `<img src="${oper_img}">`;
+
+
+            isRight();
+            
+        }
+        
+
+    </script>
+    <script>
+        
+        function isRight(){
+            alert("ㅁㄴㅇㄹ")
+            // let answer = Number(prompt("정답을 입력하세요."));
+            // if(answer == result){
+            //     alert("맞았습니다.")
+            //     cnt++;
+            // }
+            // else{
+            //     alert("틀렸습니다.")
+            // }
+        }
+    </script>
+</body>
+</html>

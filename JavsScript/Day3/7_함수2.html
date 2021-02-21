@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 - 2</title>
+</head>
+<body>
+
+    <script>
+        'use strict';
+        function fun1(x){
+            //alert(x);
+
+            alert(`전달받은 매개변수의 값 : ${x} `);
+            console.log(`전달받은 매개변수의 값 : ${x} `);
+        }
+
+        function fun2(){
+
+            let start = Number(document.getElementById('start').value);
+            let end = Number(document.getElementById('end').value);
+
+            let sum = 0;
+            for(let i=start;i<=end;i++){
+                sum += i;
+
+            }
+            alert(`${start}부터 ${end}까지의 총합은 ${sum}입니다.`);
+            console.log(`${start}부터 ${end}까지의 총합은 ${sum}입니다.`);
+        }
+
+        // // id인 start를 찾아 value를 읽어와야 하는데, html이 먼저 나오지 않고 먼저 id를 찾으니 html자체가 메모리에 없어 찾을 수가 없다.
+        // // 따라서 script를 밑으로 내려야 html이 먼저 읽힌다.
+        // const start = document.getElementById('start').value;
+        // const end = document.getElementById('end').value;
+
+        function fun3(x1, ...x3){
+            console.log(`x1의 값 : ${x1}`);  // 30
+            //console.log(`x2의 값 : ${x2}`);  // error
+            console.log(`x3의 값 : ${x3}`);  // 80,90,40,50,60,10
+
+            // x3이 배열이므로 잘 출력된다.
+            // 이 형태는 배열일 경우에만 가능한 표현 방법이다.
+            for (let i of x3){
+                console.log(i)
+            }
+        }
+        function fun4(num1=10, num2=20){
+            alert(`num1의 값 : ${num1}, num2의 값 : ${num2}`);
+            console.log(`num1의 값 : ${num1}, num2의 값 : ${num2}`);
+        }
+    </script>
+
+    <h2>함수 - 2</h2>
+
+    <p>전달할 숫자 : 
+        <input type="text" id="num"> 
+        <input type="button" value="전달" onclick="fun1(document.getElementById('num').value)">
+    </p>
+
+    <p>시작 숫자 : <input type="text" id="start"> 종료 숫자 : <input type="text" id="end"> <input type="button" value="총합 구하기" onclick="fun2()"> </p>
+
+    <p>나머지 매개변수 테스트 : <input type="button" value="나머지 매개변수 확인" onclick="fun3(30,80,90,40,50,60,10)"></p>
+
+    <p>디폴트 매개변수 테스트 : <input type="button" value="디폴트 매개변수 확인" onclick="fun4()"></p>
+</body>
+</html>

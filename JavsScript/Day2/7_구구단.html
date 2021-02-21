@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const dan = Number(prompt('몇 단을 출력할까요?'));
+        document.write(`<p>${dan}단</p>`);
+        let i = 1;
+        while(i <= 9){
+            document.write(`${dan} * ${i} = ${dan*i}<br>`);
+            i++;
+        }
+
+
+
+    </script>
+    <!-- <script>
+        const input = Number(prompt('몇 단을 출력할까요?'));
+
+        const i = 1;
+        console.log(typeof(i));
+        while(i != 10){
+            console.log(`${input} * ${i} = ${input * i}`);
+            Number(i) = Number(i) + 1;
+
+        }
+    </script> -->
+</body>
+</html>

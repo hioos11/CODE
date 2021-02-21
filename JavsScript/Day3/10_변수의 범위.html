@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>변수의 범위</h2>
+    <script>
+        var val1 = 10;
+
+        function fun1(){
+            console.log(val1);
+            val1 = 20;
+
+        }
+
+        fun1();
+        console.log(val1); //20
+
+        var val2 = 30;
+
+        function fun2(){
+            var val2 = 40;
+            console.log(`val2의 값 : ${val2}`); //40
+        }
+
+        fun2();
+        console.log(`val2의 값 : ${val2}`); //30
+
+        var val3 = 50;
+        if(val3 == 50){
+            val3 = 60;
+            console.log(`val3 : ${val3}`); //60
+        }
+        console.log(`val3 : ${val3}`); //60
+
+
+        var val4 = 50; //전역변수
+        if(val4 == 50){
+            var val4 = 60;   // var는 전역변수값이 변경된다.  -> var를 잘 쓰지 않는다.
+            console.log(`val4의 값 : ${val4}`);  // 60
+        }
+        console.log(`val4의 값 : ${val4}`);    // 60
+
+        let val5 = 50; //전역변수
+        if(val5 == 50){
+            let val5 = 60;   // 지역변수
+            console.log(`val5의 값 : ${val5}`);   // 60
+        }
+        console.log(`val5의 값 : ${val5}`);      // 50
+
+        // 마지막 코드 다시 받아서 보기
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+<body>
+    <h2>String 객체</h2>
+    <script>
+        'use strict';
+        const str1 = "안녕하세요. JavaScript!";
+        console.log(str1.length);        // 18 
+        console.log(str1.indexOf("J"));  // 7
+        console.log(str1.indexOf("Java")); // 7
+        console.log(str1.indexOf("java")); // -1  찾지 못했을 경우
+        console.log(str1.indexOf("a"));  // 8 가장 먼저 찾은
+        console.log(str1.lastIndexOf("a"));  // 10 뒤에서부터 찾는 
+        
+        console.log(str1.charAt(8)); // a 8번째 인덱스의 문자
+
+        console.log(str1.includes("Java"));  // true. 문자열 내에 존재하므로
+        console.log(str1.includes("java")); // false. 문자열 내에 존재하지 않으므로 
+
+
+        console.log(str1.substring(7));  // JavaScript! 인덱스 7부터 끝까지
+        console.log(str1.substring(7,11)); // Java 인덱스 7부터 11 바로 직전인 10까지
+        console.log(str1.substr(7,4));   // Java 인덱스 7부터 4개 가져옴]
+
+        const str2 = "드라이브,영화감상,게임,낮잠,축구,먹방,시체놀이";
+        const hobby = str2.split(",");
+
+        // hobby[0] = "드라이브";
+        // hobby[1] = "영화감상";
+        // hobby[2] = "게임";
+        // hobby[3] = "낮잠";
+        // hobby[4] = "축구";
+        // hobby[5] = "먹방";
+        // hobby[6] = "시체놀이";
+
+        for(let h of hobby){
+            console.log(h)
+        }
+
+        hobby.forEach(function(h,idx,arr){
+            console.log(h,idx,arr[idx]);
+        });
+
+        console.log(str1.replace('안녕하세요.', 'Hello!'));
+
+        const str3 = "            JavaScript        ";
+        console.log(`|${str3}|`);
+        console.log(`|${str3.trim()}|`);  // 공백 사라짐
+
+        console.log(str3.toLowerCase());
+        console.log(str3.toUpperCase());
+    </script>
+</body>
+</html>

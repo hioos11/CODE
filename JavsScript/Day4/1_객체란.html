@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체란</title>
+</head>
+<body>
+    <h2>객체란</h2>
+    <script>
+        'use strict';
+        const dog1 = "뽀미";
+        const dog2 = {
+            name: "루시",
+            family: "포메리안",
+            color: "white",
+            age: 10,
+            weight: 3.0
+        }
+    
+        console.log(dog1)
+        console.log(dog2)
+
+        console.log(dog2.name);
+        console.log(dog2.family);
+        console.log(dog2.color);
+        console.log(dog2.age);
+        console.log(dog2.weight);
+
+        console.log(dong2['name']);
+        console.log(dong2['family']);
+        console.log(dong2['color']);
+        console.log(dong2['age']);
+        console.log(dong2['weight']);
+
+        for(let i in dog2){
+            conso.lg(`${i} : ${dog2[i]}`);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 - 1</title>
+</head>
+<body>
+    <h2>프로토타입 - 1</h2>
+    <script>
+        'use strict';
+        function Dog(color,name,age){
+            this.color = color;
+            this.name = name;
+            this.age = age;
+        }
+        const rucy = new Dog("흰색","루시",10);
+        console.log(`이름 : ${rucy.name}`);
+        console.log(`색상 : ${rucy.color}`);
+        console.log(`나이 : ${rucy.age}`);
+
+        // family와 breed가 객체에 추가됨.
+        rucy.family = "포메리안";
+        rucy.breed = function(){
+            return this.color + " " + this.family;
+        }
+        console.log(`종 : ${rucy.family}`);
+        console.log(`품종 : ${rucy.breed()}`);
+
+        const ppomi = new Dog("흰색","뽀미",5);
+        console.log(`이름 : ${ppomi.name}`);
+        console.log(`색상 : ${ppomi.color}`);
+        console.log(`나이 : ${ppomi.age}`);
+
+        // 생성자에 family와 breed를 추가한 것이 아닌 rucy의 객체에만 추가한 것이기 때문에 에러.
+        // console.log(`종 : ${ppomi.family}`);
+        // console.log(`품종 : ${ppomi.breed()}`);
+    </script>
+</body>
+</html>

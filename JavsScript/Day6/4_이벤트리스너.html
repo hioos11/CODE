@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 리스너</title>
+</head>
+<body>
+    <h2>이벤트 리스너</h2>
+    <p><button id="eventBtn">이벤트 버튼</button></p>
+    <p><button id="delBtn" onclick="delEvent()">이벤트 삭제 버튼</button></p>
+    <p id="text"></p>
+    <script>
+        'use strict';
+        const btn = document.getElementById('eventBtn');
+        btn.addEventListener('click',clickBtn); //클릭을 누르면 clickBtn을 실행하겠다. 변수처럼 호출해 ()없다.  html에서만 onclick을 사용하고 javaScript에서는 click을 사용한다.
+        function clickBtn(){
+            document.getElementById('text').innerHTML = '<b>버튼을 클릭했어요</b>';
+        }
+    </script>
+</body>
+</html>

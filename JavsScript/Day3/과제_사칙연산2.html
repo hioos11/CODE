@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사칙연산</title>
+    <style>
+        .game_box {
+            border:dodgerblue 3px solid;
+            width: 1000px; height: 500px;
+            margin: 150px auto;
+        }
+        h1 { text-align: center; }
+
+        .question_box {
+            width: 384px;
+            height: 256px;
+            margin: 0 auto;
+        }
+
+        #cw {
+            padding-left: 64px;
+            position: absolute;
+        }
+        .question {
+            width: 128px;
+            height: 128px;
+            float:left;
+            margin-top: 64px;
+        }
+
+        h2 { text-align: center; }
+
+        #answer {
+            margin-left: 430px;
+            margin-top: 30px;
+            width: 100px;
+            height: 30px;
+            font-size: 30px;
+            text-align: center;
+        }
+        #ans_btn {
+            height: 30px;
+            position:relative;
+            bottom:3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="game_box">
+            <h1>사칙연산 게임</h1>
+            <h1 id="start" onclick="game();">START</h1>
+            <div class="question_box" id="q_box">
+                <img id="cw">
+                <div class="question" id="num1"></div>
+                <div class="question" id="oper"></div>
+                <div class="question" id="num2"></div>
+            </div>
+
+            <div class="answer_box">
+                <input type="text" id="answer">
+                <input type="button" value="답안 제출" id="ans_btn" onclick="isRight(); textClear();">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use script';
+        let cnt = 0;
+        let result = 999;
+
+        // html의 요소 중 id가 num1 인것을 찾아 div_num1에 저장.
+        const div_num1 = document.getElementById("num1");
+        const div_num2 = document.getElementById("num2");
+        const div_oper = document.getElementById("oper");
+
+        // cw 이미지 투명도 설정 위한 변수
+        const img_cw = document.getElementById('cw');
+
+        const game = function(){
+
+            const num1 = Math.floor(Math.random()*10)+1;
+            const num2 = Math.floor(Math.random()*10)+1;
+            const operator = Math.floor(Math.random()*4)+1;
+
+            let num1_img = "";
+            let num2_img = "";
+            let oper_img = "";
+
+            switch(num1){
+                case 1:
+                    num1_img = "./images/1.png";
+                    break;
+                case 2:
+                    num1_img = "./images/2.png";
+                    break;
+                case 3:
+                    num1_img = "./images/3.png";
+                    break;
+                case 4:
+                    num1_img = "./images/4.png";
+                    break;
+                case 5:
+                    num1_img = "./images/5.png";
+                    break;
+                case 6:
+                    num1_img = "./images/6.png";
+                    break;
+                case 7:
+                    num1_img = "./images/7.png";
+                    break;
+                case 8:
+                    num1_img = "./images/8.png";
+                    break;
+                case 9:
+                    num1_img = "./images/9.png";
+                    break;
+                case 10:
+                    num1_img = "./images/10.png";
+                    break;
+                default:
+                    num1_img = "./images/sad.png";
+            }
+            switch(num2){
+                case 1:
+                    num2_img = "./images/1.png";
+                    break;
+                case 2:
+                    num2_img = "./images/2.png";
+                    break;
+                case 3:
+                    num2_img = "./images/3.png";
+                    break;
+                case 4:
+                    num2_img = "./images/4.png";
+                    break;
+                case 5:
+                    num2_img = "./images/5.png";
+                    break;
+                case 6:
+                    num2_img = "./images/6.png";
+                    break;
+                case 7:
+                    num2_img = "./images/7.png";
+                    break;
+                case 8:
+                    num2_img = "./images/8.png";
+                    break;
+                case 9:
+                    num2_img = "./images/9.png";
+                    break;
+                case 10:
+                    num2_img = "./images/10.png";
+                    break;
+                default:
+                    num2_img = "./images/sad.png";
+            }
+            switch(operator){
+                case 1:
+                    result = num1 + num2;
+                    oper_img = "./images/add.png";
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    oper_img = "./images/minus.png";
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    oper_img = "./images/multiply.png";
+                    break;
+                case 4:
+                    result = Math.floor(num1 / num2);
+                    oper_img = "./images/division.png";
+                    break;
+                default:
+                    oper_img = "./images/sad.png";
+            }
+
+
+            // 안에 입력한 것들이 <div class="question" id="num1"></div>에 들어간다
+            div_num1.innerHTML = `<img src="${num1_img}">`;
+            div_num2.innerHTML = `<img src="${num2_img}">`;
+            div_oper.innerHTML = `<img src="${oper_img}">`;
+
+        }
+
+        // CW 이미지 fadeout
+        const hideCW = function(){
+            img_cw.style.opacity = 0;
+        }
+
+        const isRight = function(){
+            // 다시 투명도 1로 바꿔서 보여주기
+            img_cw.style.opacity = 1;
+
+            let answer = Number(document.getElementById('answer').value);
+            let correct_img = "./images/circle.png";
+            let wrong_img = "./images/cancel.png";
+            const div_qbox = document.getElementById("q_box");
+            
+
+            // 이미지 태그에 속성(이미지) 넣어주기 위한 속성 저장
+            const newAttr = document.createAttribute('src');
+            
+            if(answer == result){
+                newAttr.value = correct_img;
+                
+                cnt += 1
+                if(cnt == 10){
+                    alert('10문제를 모두 맞혔습니다!\n다시 시작하려면 START를 눌러주세요')
+                    cnt = 0
+                    return;
+                }
+                console.log(`총 ${cnt}문제 맞혔습니다`);
+
+            }else{
+                console.log("틀렸습니다.");
+                newAttr.value = wrong_img;
+            }
+
+            console.log(cnt)
+
+            // 이미지 속성 src 적용
+            img_cw.setAttributeNode(newAttr);
+
+            // 1초 후 cw 사라지고 다시 게임 시작
+            const timerCW = window.setTimeout(hideCW,1000);
+            const si = window.setTimeout(game,1000);
+            
+        }
+
+        // text 부분 지우기
+        function textClear(){
+            let el = document.getElementById('answer');
+            el.value = "";
+        }
+
+    </script>
+</body>
+</html>

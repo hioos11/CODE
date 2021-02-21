@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점 프로그램</title>
+</head>
+<body>
+    <script>
+        const name = prompt('이름을 입력하세요');
+        const kor = Number(prompt('국어 점수를 입력하세요'));
+        const math = Number(prompt('수학 점수를 입력하세요'));
+        const eng = Number(prompt('영어 점수를 입력하세요'));
+        const total = kor + math + eng;
+        const avg = total / 3;
+
+        let hakjum = "";
+        switch(parseInt(avg/10)){
+            case 10:
+            case 9:
+                hakjum='A';
+                break;
+            case 8:
+                hakjum='B';
+                break;
+            case 7:
+                hakjum='C';
+                break;
+            case 6:
+                hakjum='D';
+                break;
+            default:
+                hakjum='F';
+            }
+        console.log(`${name}님의 성적표`)
+        console.log('국어점수 : ' + kor + '점');
+        console.log('수학점수 : ' + math + '점');
+        console.log('영어점수 : ' + eng + '점');
+        console.log('총점 : ' + total + '점');
+        console.log('평균 : ' + avg + '점');
+        console.log(`학점 : ${hakjum}`);
+        
+    </script>
+</body>
+</html>

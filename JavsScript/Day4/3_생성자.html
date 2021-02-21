@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자</title>
+</head>
+<body>
+    <h2>생성자</h2>
+    <script>
+        'use strict';
+        const circle = {
+            color: "yellow",
+            diameter: 100,
+            radius: function(){
+                return this.diameter / 2;
+            }
+        }
+        console.log(circle.color);
+        console.log(circle.diameter);
+        console.log(circle.radius());
+
+        // 생성자
+        function triangle(b,h){
+            this.base = b;
+            this.height = h;
+            this.area = function(){
+                return this.base * this.height / 2;
+            }
+        }
+
+        const tr1 = new triangle(15,15);
+        console.log(tr1.base);
+        console.log(tr1.height);
+        console.log(tr1.area());
+
+        const tr2 = new triangle(25,10);
+        console.log(tr2.base);
+        console.log(tr2.height);
+        console.log(tr2.area());
+    </script>
+</body>
+</html>

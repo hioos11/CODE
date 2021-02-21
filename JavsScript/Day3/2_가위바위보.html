@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <style>
+        * {  padding: 0; margin: 0; background-color:  deepskyblue; }
+        #wrapper { width: 100%; color: #444; }
+        .inner_size { width: 1000px; height: 500px; margin: 0 auto; border: 3px solid white; border-radius: 10px; }
+        .game_box { 
+            text-align: center;
+            margin-top: 100px;
+            padding: 20px; 
+            box-sizing: border-box; 
+        }
+        #hover_msg { display: none; }
+        .game_box:hover #hover_msg {
+            display: block;
+            margin-top: 150px;
+            font-size: 50px;
+        }
+        .game_box:hover h1 { display: none; }
+        .game_box:hover .result { display: none; }
+        .game_box:hover #result_box { display: none; }
+
+        .result {
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            border: 3px solid white;
+            margin-top: 50px;
+        }
+        .result img {
+            display: inline-block;
+            margin: 50px auto 0;
+            width: 128px;
+            height: 128px;
+        }
+        .result h2 { margin-top: 20px; }
+        #result_box { margin-top: 20px; font-size: 30px; }
+    </style>
+    <script>
+        function start(){
+            //alert('게임이 시작되었어요.');
+            const random = Math.floor(Math.random() * 3) + 1; // 1 ~ 3
+            let com = "";
+            let com_img = "";
+            let user_img = "";
+
+            switch(random) {
+                case 1:
+                    com = "가위";
+                    com_img = "./images/img1.png";
+                    break;
+                case 2:
+                    com = "바위";
+                    com_img = "./images/img2.png";
+                    break;
+                case 3:
+                    com = "보";
+                    com_img = "./images/img3.png";
+                    break;
+            }
+
+            let user = prompt("가위, 바위, 보 중 선택하세요");
+            switch(user){
+                case "가위":
+                    user_img = "./images/img1.png";
+                    break;
+                case "바위":
+                    user_img = "./images/img2.png";
+                    break;
+                case "보":
+                    user_img = "./images/img3.png";
+                    break;
+                default:
+                    user_img = "./imges/sad.png";
+                    user = "잘못 입력했어요";
+            }
+
+            let result = "";
+            if(com == "가위"){
+                switch(user){
+                    case "가위":
+                        result = "비겼습니다.";
+                        break;
+                    case "바위":
+                        result = "유저 승!";
+                        break;
+                    case "보": 
+                        result = "컴퓨터 승!";
+                        break;
+                }
+            }else if(com == "바위"){
+                switch(user){
+                    case "가위":
+                        result = "컴퓨터 승!";
+                        break;
+                    case "바위":
+                        result = "비겼습니다.";
+                        break;
+                    case "보": 
+                        result = "유저 승!";
+                        break;
+                }
+            }else if(com == "보"){
+                switch(user){
+                    case "가위":
+                        result = "유저 승!";
+                        break;
+                    case "바위":
+                        result = "컴퓨터 승!";
+                        break;
+                    case "보": 
+                        result = "비겼습니다.";
+                        break;
+                }
+            }
+            // html의 요소 중 id가 com인것을 찾아 div_com에 저장.
+            const div_com = document.getElementById("com");
+            const div_user = document.getElementById("user");
+            const game_box = document.getElementById("result_box");
+
+            // 안에 입력한 것들이 <div class="result com" id="com">에 들어간다
+            div_com.innerHTML = `<h2>${com}</h2><img src="${com_img}"><h2>컴퓨터</h2>`;
+            div_user.innerHTML = `<h2>${user}</h2><img src="${user_img}"><h2>유저</h2>`;
+            game_box.innerHTML = `<h3>${result}</h3>`;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="inner_size game_box" onclick="start();">
+            <h1>가위바위보 게임</h1>
+            <h1 id="hover_msg">게임을 시작하려면 클릭하세요</h1>
+            <div class="result com" id="com">
+
+
+            </div>
+            <div class="result user" id="user">
+
+            </div>
+            <div id="result_box">
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

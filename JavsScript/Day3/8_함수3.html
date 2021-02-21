@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 - 3</title>
+</head>
+<body>
+    <h2>함수 - 3</h2>
+    <script>
+        'use strict';
+
+        function fun1(start, end){
+            let sum = 0;
+            for(let i=start;i<=end;i++){
+                sum+=i;
+            }
+            return sum;
+        }
+        console.log(`1부터 10까지의 총합 : ${fun1(1,10)}`);
+        const result = fun1(1,100);
+        console.log(`1부터 100까지의 총합 : ${result}`);
+
+    </script>
+</body>
+</html>

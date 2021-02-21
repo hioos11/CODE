@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩반복문</title>
+</head>
+<body>
+    <h2>중첩반복문</h2>
+    <script>
+        'use strict';
+        for(let i=2;i<=9;i++){
+            document.write(`<p>${i}단</p>`);
+            for(let j=1;j<=9;j++){
+                document.write(`${i} * ${j} = ${i*j}<br>`);
+            }
+        }
+    </script>
+</body>
+</html>

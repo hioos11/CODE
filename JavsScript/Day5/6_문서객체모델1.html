@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델 - 1</title>
+</head>
+<body>
+    <h2>문서객체모델 - 1</h2>
+    <ul>
+        <li name="model">HTML</li>
+        <li>CSS</li>
+        <li id="js" class="js">JavaScript</li>
+        <li id="js" class="js">jQuery</li>
+        <li class="server">Apache</li>
+        <li class="server">PHP</li>
+        <li class="server">JSP</li>
+        <li id="js" class="js">Node.js</li>
+        <li id="js" class="js">React</li>
+    </ul>
+    <script>
+        'use strict';
+        
+        // li태그를 모두 선택해서 tagName에 저장. 여러개의 li 태그이므로 배열로 가져온다.
+        const tagName=document.getElementsByTagName("li");
+        for(let i=0;i<tagName.length;i++){
+            console.log(tagName[i]);
+            tagName[i].style.color = "gold";
+        }
+        
+        const className = document.getElementsByClassName('js');
+        for(let i=0;i<className.length;i++){
+            console.log(className[i]);
+            className[i].style.color = "deeppink"
+        }
+        
+        const name=document.getElementsByName("model");
+        for(let i=0;i<name.length;i++){
+            console.log(name[i]);
+            name[i].style.color = "deepskyblue";
+        }
+        
+        // id는 여러개여도 맨 처음 하나만 적용된다.
+        const id = document.getElementById("js");
+        id.style.color = "yellowgreen"
+
+        const querySelector = document.querySelectorAll("li.server");
+        for(let i=0;i<querySelector.length;i++){
+            console.log(querySelector[i]);
+            querySelector[i].style.color = "blue"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator 객체</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const success = function(location){
+            console.log(location.coords.latitude);
+            console.log(location.coords.longitude);
+        }
+        const fail = function(msg){
+            console.log(msg.code);
+        }
+        // 성공하면 succss, 실패하면 fail.
+        navigator.geolocation.getCurrentPosition(success, fail);
+    </script>
+</body>
+</html>

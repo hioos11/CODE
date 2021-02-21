@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델 - 2</title>
+</head>
+<body>
+    <h2>문서객체모델 - 2</h2>
+    <script>
+        'use strict';
+        // 모든html이 로드된 후에 함수를 실행하라.
+        // script의 위치가 상관없어진다. 
+        // 어디에 있어도 에러가 나지 않는다.
+        window.onload = function(){
+            const gnb = document.getElementById('gnb');
+            console.log(gnb); // 객체 출력
+            console.log(gnb.parentNode); // nav의 부모인 div 객체 출력  
+            console.log(gnb.children[0]); //ul
+            console.log(gnb.children[0].nextElementSibling); // null
+            console.log(gnb.children[0].children[1]); //li
+            console.log(gnb.children[0].children[1].nextElementSibling);
+            console.log(gnb.children[0].firstChild);    // firstchild는 안에 있는 요소를 출력하는데 띄어쓰기가 있으면 텍스트로 판단해 텍스트노드가 출력된다. text
+            console.log(gnb.children[0].firstElementChild)
+        }
+    </script>
+    <div>
+        <nav id="gnb">
+            <ul>
+                <li class="first">내용 1</li>
+                <li>내용 2</li>
+                <li>내용 3</li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+</html>

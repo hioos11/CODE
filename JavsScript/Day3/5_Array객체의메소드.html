@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체의 메소드</title>
+</head>
+<body>
+    <h2>Array 객체의 메소드</h2>
+    <script>
+        'use strict';
+        let arr1 = ['김사과',20,160.5,true];
+        console.log(arr1);
+
+        arr1.push("여자");
+        console.log(arr1);
+
+        let arr2 = ['학생','서울'];
+
+        arr1 = arr1.concat(arr2);
+        console.log(arr1);
+
+        arr2 = arr2.join("|");
+        console.log(arr2);
+
+        arr1.reverse();
+        console.log(arr1);
+
+        let arr3 = ['c','b','a','z','o'];
+        arr3.sort();
+        console.log(arr3);
+    </script>
+</body>
+</html>

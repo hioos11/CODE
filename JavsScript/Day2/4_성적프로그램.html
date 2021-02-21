@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적 프로그램</title>
+</head>
+<body>
+    <h2>성적 프로그램</h2>
+    <script>
+        'use strict';
+        alert('류정원님의 성적표');
+        const kor = prompt('국어점수를 입력하세요');
+        const math = prompt('수학점수를 입력하세요');
+        const eng = prompt('영어점수를 입력하세요');
+
+        console.log("국어점수 : "  + kor + "점");
+        console.log("수학점수 : "  + math + "점");
+        console.log("영어점수 : "  + eng + "점");
+
+        const total = Number(kor) + Number(math) + Number(eng);
+        
+        console.log("총점 : " + total + "점");
+        console.log("평균 : " + Number(total)/3 + "점");
+    </script>
+</body>
+</html>

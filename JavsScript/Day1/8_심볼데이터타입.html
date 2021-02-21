@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입 - 심볼</title>
+</head>
+<body>
+    <h2>데이터타입 - 심볼</h2>
+    <script>
+        'use strict';
+        const sym1 = Symbol('apple');
+        const sym2 = Symbol('apple');
+        console.log(sym1 === sym2);
+
+        const sym3 = Symbol();
+        const sym4 = sym3;
+        console.log(sym3 === sym4);
+    </script>
+</body>
+</html>

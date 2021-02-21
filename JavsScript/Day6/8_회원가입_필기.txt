@@ -1,0 +1,81 @@
+<form name="regform" id="regform" method="post">
+
+method는 post와 get 방식이 있다.
+버튼이 submit 형태라 버튼을 누르면 서버로 데이터를 보낼때 필요한 형식인데, get방식은 url에 userid='apple'처럼 정보가 보이지만, post방식은 보이지 않는다.
+하지만 속도 차이가 있다.
+
+
+<p><input type="submit" value="가입완료" onclick="sendit()"> <input type="reset" value="다시작성"></p>
+클릭시 sendit 이 호출될 것 같지만 누르는 순간 페이지가 넘어간다.submit타입이라.
+
+function sendit(){
+    // alert('sendit() 호출');
+    const userid = document.getElementById('userid');
+
+    if(userid.value == ''){
+        alert('아이디를 입력하세요');
+        userid.focus(); //포커스를 맞춰준다.
+        
+    }
+}
+이렇게 스크립트를 짜도 alert까지는 나오지만 alert에서 확인을 누르는 순간 페이지가 넘어간다. 이 또한 submit형태라 그렇다.
+
+따라서
+        <p><input type="button" value="가입완료" onclick="sendit()"> <input type="reset" value="다시작성"></p>
+이렇게 하면 안 썼을 때는 문제 없지만
+텍스트에 입력을 했어도 반응이 없다.
+
+
+function sendit(){
+    // alert('sendit() 호출');
+    const frm = document.getElementById('regform');
+    const userid = document.getElementById('userid');
+    
+    if(userid.value == ''){
+        alert('아이디를 입력하세요');
+        userid.focus(); //포커스를 맞춰준다.
+
+    }
+
+    frm.submit();
+    
+}
+이렇게 고치면 두 경우 모두 페이지가 넘어간다
+
+
+    if(userid.value == ''){
+        alert('아이디를 입력하세요');
+        userid.focus(); //포커스를 맞춰준다.
+        return false;  // 더이상 진행이 되지 않도록 false를 리턴한다.
+    }
+
+이렇게 수정하면 입력을 안헀을 때에는 안넘어가고 입력했을때만 넘어가게 원하는대로 동작한다.
+
+하지만 이 방법의 단점은 submit이 아니라서 입력후 엔털르 눌러도 넘어가지 않는다.
+
+    <form name="regform" id="regform" method="post" action="regist.jsp" onsubmit="return sendit()">
+
+    onsubmit : submit이 눌렸을 때
+
+    onsubmit="return sendit()"이렇게 실행하므로써 리턴이 false인 경우를 판단한다.
+    form에 이벤트를 걸어서 
+
+
+
+
+    전화번호 검증
+    \d : decimal (숫자)
+    \d{3}- : 숫자 세개로 시작하며 -가 포함된다.
+    \d{3,4} : 숫자 세자리 또는 네자리
+
+    이메일 검증
+    \. : 정규식 내에서.를 사용하려면 이렇게 사용해야 한다.
+
+
+    onkeyup="moveFocus()"
+    키를 눌렀다 뗄 때마다 함수 호출
+
+    hidden 태그
+    태그가 눈에 보이진 않지만 name, id등 모든 것을 가지고 있다.
+    
+    readonly : 입력을 못하게 막아둔다.
